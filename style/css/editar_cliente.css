@@ -1,0 +1,124 @@
+section#datos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h3{
+    margin: 10px 0;
+    font-size: 20px;
+    text-align: center;
+    color: #2F80ED;
+}
+
+form#info_registro {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin: 0;
+    width: 80%;
+}
+
+.contenedores {
+    background: #F9FAFB;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #E4E7EC;
+    margin-bottom: 20px;
+}
+
+.dato_user{
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+}
+
+input {
+    border: 1px solid #E4E7EC;
+    border-radius: 5px;
+    background: #fff;
+    transition: border 0.3s;
+    font-size: 14px;
+    margin: 0;
+    padding: 0.7em 0.7em 0.7em 45px;
+    position: relative;
+    width: 100%;
+    z-index: 2; 
+}
+
+.campos{
+    margin: 10px;
+    position: relative;
+    width: 90%;
+
+}
+
+    .campos > i{
+        border-radius: 10%;
+        color: #2F80ED;
+        font-size: 22px;
+        left: 7px;
+        padding: 7px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-23%);
+        z-index: 3;
+}
+
+.campo_select{
+    background-color: #fff;
+    border: solid 1px #E4E7EC;
+    border-radius: 5px;
+    color: #333;
+    font-weight: 400;
+    font-family: "Work Sans", sans-serif;
+    font-size: 14px;
+    margin: 0;
+    padding: 0.7em 0.7em 0.7em 45px;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+}
+
+
+div#rol select{
+    background-color: #fff;
+    border: solid 1px #E4E7EC;
+    border-radius: 5px;
+    font-weight: 400;
+    font-family: "Work Sans", sans-serif;
+    font-size: 14px;
+    margin: 0;
+    padding: 0.7em 0.7em 0.7em 45px;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+    color: #333;
+}
+
+div#fecha_nac{
+    color: #333;
+}
+
+.letras{
+    margin: 0;
+    font-size: 15px;
+    color: #333;
+}
+
+div#section_3{
+    display: flex;
+    justify-content: center;
+}
+
+.btn_actualizar{
+    background-color: #2F80ED;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 18px;
+    margin: 1.0em 0 0 0;
+    padding: 8px 17px;
+    width: 40%;
+}

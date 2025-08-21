@@ -1,0 +1,22 @@
+# Archivos de entorno
+.env
+
+# Librerías externas (si usas Composer en el futuro)
+vendor/
+
+# Archivos de log y temporales
+*.log
+*.tmp
+*.bak
+*.old
+
+# Archivos de base de datos eliminados
+vin_paravalle.sql
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Configuración de IDEs
+.vscode/
+.idea/

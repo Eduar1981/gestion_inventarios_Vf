@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600&display=swap');
+
+form#editar_cat {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px 10px;
+}
+
+div#section_1{
+    background: #F9FAFB;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #E4E7EC;
+    margin-bottom: 20px;
+}
+
+
+.campos{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0;
+}
+
+.letras{
+    margin: 0;
+    font-size: 15px;
+    color: #333;
+    padding: 0 10px;
+}
+
+input {
+    width: 100%;
+    padding: 18px;
+    font-size: 14px;
+    border: 1px solid #E4E7EC;
+    border-radius: 5px;
+    background: #fff;
+    transition: border 0.3s;
+    margin: 5px 6px;
+}
+
+button#editar {
+    background-color: #2F80ED;
+    color: #fff;      
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px 6px;
+    transition: background 0.3s;
+    font-size: 16px;
+}
+
+button#editar:hover {
+    background-color: #1C63C2; 
+    transform: scale(1.05); /* efecto de zoom */
+}
+
+@media (min-width: 600px) {
+    form#editar_cat{
+        display: flex;
+        justify-content: center;
+    }
+    div#section_1{
+        width: 60%;
+    }
+
+}

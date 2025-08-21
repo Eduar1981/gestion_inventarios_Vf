@@ -1,0 +1,45 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.producto {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.sugerencia {
+    padding: 5px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+.sugerencia:hover {
+    background-color: #e0e0e0;
+}
+.sin-resultados, .error {
+    padding: 5px;
+    color: red;
+}
+
+

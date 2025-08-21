@@ -1,0 +1,12 @@
+
+/* Cambiar el color de fondo del encabezado del modal */
+.modal-header {
+    background-color: #004085;
+    color: white;
+}
+
+/* Personalizar el botón de registro */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}

@@ -1,0 +1,202 @@
+a#add_categoria{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2em;
+    text-decoration: none;
+    color: #fff;
+    background-color: green;
+    padding: 10px;
+    border-radius: 5px;
+    align-items: center;
+}
+
+    a#add_categoria:hover{
+        background-color:#2F80ED;
+    }
+
+    a#add_categoria i{
+        margin: 0 6px 0 0;
+        font-size: 1.2em;
+    }
+
+    a#add_categoria p{
+        font-size: 15px;
+        margin: 0;
+    }
+
+/* ------------------------------------------------------------- */
+section#opciones{
+    display: flex;
+    justify-content: flex-end;
+}
+
+div#buscar_cat{
+    margin: 10px;
+    position: relative;
+    width: 95%;
+    display: flex;
+    justify-content: flex-end;
+
+}
+button#btn_buscador{
+    display: none;
+}
+    #buscar_cat > i{
+        border-radius: 10%;
+        color: #2F80ED;
+        font-size: 22px;
+        left: 21%;
+        padding: 7px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 3;
+}
+
+div#buscar_cat input#buscarCategoria{
+    width: 80%;
+    padding: 1em 1em 1em 45px;
+    font-size: 14px;
+    border: 1px solid #E4E7EC;
+    border-radius: 5px;
+    background: #fff;
+    transition: border 0.3s;
+    margin: 0;    
+
+}
+
+/* -------------------------------------------------------- */
+section#datos {
+    background: #fff;
+    padding: 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ------------------------------------------------------------- */
+table#datos_categoria {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+
+    table#datos_categoria th {
+        background: #F3F4F6;
+        font-size: 14px;
+        color: #555;
+        text-transform: uppercase;
+    }
+
+    table#datos_categoria td {
+        font-size: 15px;
+        color: #333;
+    }
+
+    table#datos_categoria th,
+    table#datos_categoria td {
+        padding: 12px 15px;
+        text-align: left;
+        border-bottom: 1px solid #E4E7EC;
+        text-transform: capitalize;
+    }
+
+table#datos_categoria tr:hover {
+    background: #F9FAFB;
+}
+
+table#datos_categoria a {
+    text-decoration: none;
+    color: #2F80ED;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #E4E7EC;
+    transition: background 0.3s, transform 0.2s;
+}
+
+table#datos_categoria a:hover {
+    background: #D1D5DB;
+    transform: scale(1.1);
+}
+
+table#datos_categoria i {
+    font-size: 20px;
+}
+
+#sugerencias {
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    max-height: 200px;
+    overflow-y: auto;
+    width: 250px;
+    z-index: 1000;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+}
+
+.sugerencia {
+    padding: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    border-bottom: 1px solid #ddd;
+}
+
+.sugerencia:hover {
+    background: #007bff;
+    color: white;
+}
+
+
+/* ------------------responsive-------------------- */
+
+@media (max-width: 550px) {
+
+    section#barra {
+        flex-direction: column; 
+        align-items: flex-start; 
+        gap: 10px;
+    }
+
+        div#atras a {
+            font-size: 1.5em;
+        }
+
+        div#atras h4 {
+            font-size: 18px; 
+        }
+
+        a#add_cliente{
+            font-size: 1em;
+            padding: 8px;
+            left: 50%;
+            transform: translateX(50%);
+        }
+
+        section#datos {
+            overflow-x: auto; /* Agrega scroll horizontal */
+        }
+
+        #datos_categoria th, #datos_categoria td {
+            padding: 8px;
+            font-size: 12px; 
+        }
+    
+        table#datos_categoria th {
+            text-transform: none; /* Evitar texto completamente en mayúsculas */
+        }
+    
+        /* iconos */
+        table#datos_categoria a {
+            width: 30px;
+            height: 30px;
+            font-size: 16px;
+        }
+
+}
+
+
+

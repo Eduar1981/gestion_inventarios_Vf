@@ -1,0 +1,448 @@
+a#add_venta{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2em;
+    text-decoration: none;
+    color: #fff;
+    background-color: green;
+    padding: 10px;
+    border-radius: 5px;
+    align-items: center;
+}
+
+    a#add_venta:hover{
+        background-color:#2F80ED;
+    }
+
+    a#add_venta i{
+        margin: 0 6px 0 0;
+        font-size: 1.2em;
+    }
+
+    a#add_venta p{
+        font-size: 15px;
+        margin: 0;
+    }
+
+/* -------------------------------------------------------- */
+section#datos {
+    background: #fff;
+    padding: 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ------------------------------------------------------------- */
+table#datos_ventas {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+
+    table#datos_ventas th {
+        background: #F3F4F6;
+        font-size: 14px;
+        color: #555;
+        text-transform: uppercase;
+    }
+
+    table#datos_ventas td {
+        font-size: 15px;
+        color: #333;
+    }
+
+    table#datos_ventas th,
+    table#datos_ventas td {
+        padding: 12px 15px;
+        text-align: left;
+        border-bottom: 1px solid #E4E7EC;
+        text-transform: capitalize;
+    }
+
+table#datos_ventas tr:hover {
+    background: #F9FAFB;
+}
+
+table#datos_ventas a {
+    text-decoration: none;
+    color: #2F80ED;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #E4E7EC;
+    transition: background 0.3s, transform 0.2s;
+}
+
+table#datos_ventas a:hover {
+    background: #D1D5DB;
+    transform: scale(1.1);
+}
+
+table#datos_ventas i {
+    font-size: 20px;
+}
+
+th#edit{
+    display: none;
+}
+
+td#icono_edit{
+    display: none;
+}
+/* ----------------responsive-------------- */
+@media (max-width: 550px) {
+
+    section#barra {
+        flex-direction: column; 
+        align-items: flex-start; 
+        gap: 10px;
+    }
+
+        div#atras a {
+            font-size: 1.5em;
+        }
+
+        div#atras h4 {
+            font-size: 23px; 
+        }
+
+        a#add_venta{
+            font-size: 1em;
+            padding: 8px;
+            left: 50%;
+            transform: translateX(50%);
+        }
+
+        section#datos {
+            overflow-x: auto; /* Agrega scroll horizontal */
+        }
+
+        #datos_ventas th, #datos_ventas td {
+            padding: 8px;
+            font-size: 12px; 
+        }
+    
+        table#datos_ventas th {
+            text-transform: none; /* Evitar texto completamente en mayúsculas */
+        }
+    
+        /* iconos */
+        table#datos_ventas a {
+            width: 30px;
+            height: 30px;
+            font-size: 16px;
+        }
+
+}
+
+/* Estilos del modal */
+#modalVenta {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+#contenidoModal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 700px; /* Aumentado para acomodar dos columnas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-header h3 {
+    margin: 0;
+    color: #333;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+#cerrarModal {
+    cursor: pointer;
+    font-size: 24px;
+    color: #666;
+}
+
+/* Grid para la información */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.info-group {
+    margin-bottom: 0; /* Eliminado el margen inferior */
+}
+
+.info-group label {
+    display: block;
+    color: #666;
+    font-size: 0.85rem;
+    margin-bottom: 2px;
+}
+
+.info-group span {
+    display: block;
+    color: #333;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* Sección de productos */
+.productos-section {
+    margin: 16px 0;
+}
+
+.productos-section h4 {
+    color: #333;
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    
+}
+
+#detalleVenta {
+    max-height: 200px; /* Altura máxima reducida */
+    overflow-y: auto;
+}
+
+/* Tabla de productos */
+#detalleVenta table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem; /* Texto más pequeño en la tabla */
+}
+
+#detalleVenta th {
+    background-color: #f8f9fa;
+    padding: 8px;
+    text-align: left;
+    font-weight: 600;
+    color: #333;
+}
+
+#detalleVenta td {
+    padding: 6px 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 16px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    #contenidoModal {
+        width: 95%;
+        padding: 16px;
+        max-width: 450px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr; /* Una sola columna en móvil */
+        gap: 12px;
+    }
+
+    #detalleVenta {
+        max-height: 150px;
+    }
+}
+
+/* Estilos para el modal */
+#modalFactura {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+#contenidoModalFactura {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 24px;
+    background-color: white;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Encabezado del modal */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-header h3 {
+    margin: 0;
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+#cerrarModalFactura {
+    cursor: pointer;
+    font-size: 24px;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+#cerrarModalFactura:hover {
+    color: #333;
+}
+
+/* Estilos para el formulario */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.form-group .optional {
+    color: #666;
+    font-size: 0.85rem;
+    font-weight: normal;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+/* Botón de envío */
+.btn-submit {
+    width: 100%;
+    padding: 14px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #357abd;
+}
+
+.btn-submit:active {
+    transform: translateY(1px);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    #contenidoModalFactura {
+        width: 95%;
+        padding: 16px;
+    }
+
+    .form-group {
+        margin-bottom: 16px;
+    }
+
+    .form-group input,
+    .form-group select {
+        padding: 10px;
+    }
+}
+
+/* ------Estilos para las Descargas -------- */
+.descargar-pdf button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px;
+}
+
+.descargar-pdf button:hover {
+    background-color: #45a049;
+}
+
+.alert {
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+

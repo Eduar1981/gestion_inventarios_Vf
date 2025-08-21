@@ -1,0 +1,240 @@
+ @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap');
+
+  *{
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+}
+
+body, html{ 
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: "Work Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+figure{
+    margin: 0;
+    padding: 0;
+}
+
+figure img{
+    margin: 0;
+    width: 100%;
+}
+
+main#inicio{
+    margin: 0;
+    min-height: 100vh;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    background-color: #FEFEFC;
+    
+}
+
+div#principal{
+    align-items: center;
+}
+
+section#logo{
+    display: grid;
+    height: 30vh;
+    margin: 0;
+    place-items: center;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+}
+
+section#logo div#soft{
+    display: none;
+    align-items: center;
+    flex-direction: column;
+    margin: 15px 0 0 0;
+}
+
+    div#soft p{
+        margin: 0;
+        color: #00324D;
+    }
+
+    p#description{
+        font-weight: 400;
+    }
+
+    figure#img{
+        width: 50%;
+        margin: 12px 0 0 0;
+    }
+
+
+
+section#info{
+    height: 60vh;
+    left: 0;
+    padding: 0 1.8em;
+    width: 100%;
+    z-index: 2;
+}
+
+    form#entrar{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    form#entrar input{
+        background-color: #fff;
+        border: 1px solid #E4E7EC;
+        border-radius: 5px;
+        font-family: 'Barlow', sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+        margin: 0;
+        padding: 1em 1em 1em 45px;
+        position: relative;
+        width: 100%;
+        z-index: 2; 
+    }
+
+#usuario_correo::placeholder{
+    font-size: 16px;
+    color: #3493A8;
+    font-family: "Work Sans", sans-serif;
+}
+
+#usuario_pssw::placeholder{
+    font-size: 16px;
+    color: #3493A8;
+    font-family: "Work Sans", sans-serif;
+}
+
+p#error{
+   color: #F03A80;
+   font-weight: 600;
+   font-size: 16px;
+   margin: 0;
+   text-align: center;
+}
+
+a#btn_registro{
+    background-color: #fff;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    margin: 30px 0 25px 0;
+    border: solid 1px #2F80ED;
+    border-radius: 5px;
+    padding: 8px 17px;
+    text-decoration: none;
+}
+
+    #btn_registro p{
+        color: #2F80ED;
+        font-size: 17px;
+        font-weight: 200;
+        margin: 0;
+    }
+
+div#recuperar_pssw{
+    width: 90%;
+    text-align: center;
+}
+
+    div#recuperar_pssw a{
+        text-decoration: none;
+        color:  #385C57;
+        font-size: 14px;
+        font-weight: 200;
+        margin: 0 0 0 8px;
+    }
+
+footer{
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 3px;
+}
+
+footer p{
+    margin: 0 0 2px 0;
+    font-size: 10px;
+    font-weight: 400;
+    color: #385C57;
+    text-align: center;
+}
+
+/* -----------------------------------------clases----------------------------------- */
+
+.campos{
+    margin: 12px;
+    position: relative;
+    width: 90%;
+
+}
+
+    .campos > i{
+        border-radius: 10%;
+        color: #2F80ED;
+        font-size: 22px;
+        left: 7px;
+        padding: 7px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 3;
+}
+
+.btn_entrar{
+   /*  background: linear-gradient(to right, #3493A8, transparent ); */
+    background-color: #2F80ED;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 8px 17px;
+    width: 60%;
+}
+
+/* -----------------------------------responsive--------------------+--------------------- */
+@media screen and (min-width:1000px){
+    main#inicio{
+        display: grid;
+        place-items: center;
+       
+    }
+
+    div#principal{
+        position: relative;
+        width: 80%;
+        display: flex;
+        align-items: stretch;
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+
+    section#logo{
+        /* display: flex; */
+        flex-basis: 40%;
+        flex-direction: column;
+
+    }
+    section#logo div#soft{
+        display: flex;
+    }
+
+        
+    section#info{
+        flex-basis: 60%;
+        align-content: center;
+    }
+}

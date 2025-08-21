@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+* {
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+    margin: 0;
+    padding: 0;
+    font-family: "Nunito Sans", serif;
+}
+
+body, html { 
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Nunito Sans", serif;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #F8F9FA; /* Fondo blanco ligeramente gris */
+    color: #333; /* Texto oscuro para buena legibilidad */
+}
+
+/* ------------------------------------------------------------------------------------- */
+div#nombre{
+    color: #2F80ED;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-weight: 200;
+}
+.main-head h3 {
+    font-size: 1.5rem;
+    color: #333; /* Texto oscuro */
+}
+
+.card-container {
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
+    gap: 25px;
+    margin: 20px 10px;
+}
+
+.card {
+    background: #FFFFFF; /* Fondo blanco */
+    border: 1px solid #E0E0E0; /* Borde gris claro */
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    transition: 0.3s;
+    cursor: pointer;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    width: clamp(180px, 83%, 230px);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra más marcada al pasar el cursor */
+}
+
+.card h3 {
+    color: #333;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.card p {
+    color: #666; /* Texto gris intermedio */
+}
+
+/* Botón del menú */
+#menu {
+    color: #333; /* Ícono del menú en gris oscuro */
+    font-size: 2em;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#menu:hover {
+    color: #666; /* Cambiar a gris intermedio al pasar el cursor */
+}
+
+#detalles-productos {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 40%;
+    text-align: center;
+    display: none;
+}
+
+#detalles-productos ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+#detalles-productos li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 18px;
+    text-transform: capitalize;
+}
+
+span#cerrar-productos {
+    color: red;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/*  Estilos del modal */
+#detalles-productos {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 70%;
+    text-align: center;
+    display: none;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+#detalles-productos h3 {
+    margin-top: 0;
+    text-transform: uppercase;
+}
+
+#contenido-productos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+/*  Estilos para las tarjetas de ventas */
+.tarjeta-venta {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    width: 45%;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.tarjeta-venta:hover {
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.tarjeta-venta h3 {
+    color: #333;
+    font-size: 18px;
+}
+
+.tarjeta-venta p {
+    font-size: 17px;
+    color: #666;
+}
+
+
+h3#titulo-productos{
+    text-transform: uppercase;
+}
+
+
+/*  */
+
+@media screen and (max-width:700px) {
+    #detalles-productos{
+        text-transform: translate(-50%, -50%);
+        width: 85%;
+    }
+    #contenido-productos{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .tarjeta-venta{
+        width: 95%;
+    }
+    .tarjeta-venta h3 {
+        font-size: 15px;
+    }
+    
+    .tarjeta-venta p {
+        font-size: 16px;
+    }
+    #detalles-productos li{
+        font-size: 14px;
+    }
+    
+}
+
+@media screen and (min-width:700px){
+    .card-container{
+        display: flex;
+        justify-content: start;
+        align-items: stretch;
+    }
+    .content-card{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: flex-start;
+        /* width: clamp(280px, 33%, 520px); */
+    }
+    .card{
+        max-width: 250px;
+    }
+    div#new_venta{
+        max-width: 210px;
+    }
+    
+    .card h3{
+        font-size: 21px;
+    }
+}

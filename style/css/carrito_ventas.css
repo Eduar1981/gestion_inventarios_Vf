@@ -1,0 +1,481 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+div#buscador{
+    margin: 12px 0;
+    position: relative;
+    /* width: 95%; */
+
+}
+
+    #buscador > i{
+        border-radius: 10%;
+        color: #2F80ED;
+        font-size: 22px;
+        left: 7px;
+        padding: 7px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 3;
+    }
+
+    div#buscador input#buscarProducto{
+        width: 100%;
+        padding: 1em 1em 1em 40px;
+        font-size: 14px;
+        border: 1px solid #E4E7EC;
+        border-radius: 5px;
+        background: #fff;
+        transition: border 0.3s;
+        margin: 0;    
+    }
+section#datos{
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    padding-right: 7px ;
+}
+/* -----------INFO_PRODUCTO (tabla temporal)--------- */
+div#info_producto{
+    display: none;
+}
+/* table#seleccion_prod{
+    width: 95%;
+    border-collapse: collapse;
+    margin: 30px 10px 10px 10px;
+}
+
+table#seleccion_prod th {
+    background: #F3F4F6;
+    font-size: 14px;
+    color: #555;
+    text-transform: uppercase;
+}
+
+table#seleccion_prod td {
+    font-size: 15px;
+    color: #333;
+}
+
+table#seleccion_prod th,
+table#seleccion_prod td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #E4E7EC;
+    text-transform: capitalize;
+}
+
+table#seleccion_prod tr:hover {
+    background: #F9FAFB;
+}
+
+table#seleccion_prod a {
+    text-decoration: none;
+    color: #2F80ED;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #E4E7EC;
+    transition: background 0.3s, transform 0.2s;
+}
+
+table#seleccion_prod a:hover {
+    background: #D1D5DB;
+    transform: scale(1.1);
+}
+
+table#seleccion_prod i {
+    font-size: 20px;
+} */
+
+div#cantidad{
+    display: flex;
+    /* margin: 8px; */
+}
+
+    #cantidadProducto {
+        width: 100%;
+        max-width: 200px;
+        margin: 0 8px 0 0;
+        padding: 12px;
+        font-size: 15px;
+        color: #333;
+        border: 1px solid #E4E7EC;
+        border-radius: 5px;
+        background: #FFFFFF;
+        outline: none;
+        transition: all 0.3s;
+    }
+
+    #cantidadProducto:focus {
+        border-color: #2F80ED;
+    }
+
+#agregarProducto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background: #2F80ED;
+    color: white;
+    font-size: 15px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+    #agregarProducto:hover {
+        background: #1E6FD9;
+        transform: scale(1.05);
+    }
+
+        #agregarProducto i {
+            font-size: 18px;
+        }
+
+/* -------------tabla de productos a vender----------- */
+/* div#venta_resumen{
+    width: 95%; 
+} */
+#resumenTabla {
+    width: 100%;
+    border-collapse: collapse;
+    /* margin: 30px 10px 10px 10px; */
+}
+
+table#resumenTabla th {
+    background: #F3F4F6;
+    font-size: 14px;
+    color: #555;
+    text-transform: uppercase;
+}
+
+table#resumenTabla td {
+    font-size: 15px;
+    color: #333;
+}
+
+table#resumenTabla th,
+table#resumenTabla td {
+    /* padding: 4px 15px; */
+    text-align: left;
+    border-bottom: 1px solid #E4E7EC;
+    text-transform: capitalize;
+}
+
+table#resumenTabla tr:hover {
+    background: #F9FAFB;
+}
+
+table#resumenTabla a {
+    text-decoration: none;
+    color: #2F80ED;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #E4E7EC;
+    transition: background 0.3s, transform 0.2s;
+}
+
+table#resumenTabla a:hover {
+    background: #D1D5DB;
+    transform: scale(1.1);
+}
+
+table#resumenTabla i {
+    font-size: 20px;
+}
+
+
+
+/* ----------suma y resta de cantidad de productos a vender----- */
+
+td#acciones{
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+td#acciones button{
+    width: 25px;
+  height: 25px;
+  background-color: #fff;
+  border-radius: 25%;
+  color: #000;
+  border: solid 1px #E4E7EC;
+  cursor: pointer;
+  margin: 6px;
+}
+
+td#acciones button#elim_cantidad{
+    color: #2F80ED;
+    width: 35px;
+    height: 35px;
+    background: #E4E7EC;
+    border-radius: 50%;
+    margin: 0;
+}
+
+td#acciones button:hover {
+    background: #F3F4F6;
+    transform: scale(1.1);
+    transition: background 0.3s, transform 0.2s;
+}
+
+td#acciones button#elim_cantidad:hover {
+    background: #D1D5DB;
+    transform: scale(1.1);
+}
+
+/* ---cantidad de productos total--- */
+.total {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    background: #F3F4F6;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 12px 0;
+    /* width: 100%; */
+}
+.total > span{
+    color: #2F80ED;
+}
+
+div#fin_venta{
+    display: flex;
+    /* width: 95%;
+    margin: 10px; */
+    justify-content: space-between;
+    flex-direction: column;
+}
+div#medio_pago{
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #555;
+    margin: 0;
+    display: block;
+}
+
+select#metodo_pago {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #E4E7EC;
+    border-radius: 5px;
+    background: #F9FAFB;
+    color: #333;
+    outline: none;
+    transition: border 0.3s, background 0.3s;
+}
+
+select#metodo_pago:focus {
+    border-color: #2F80ED;
+    background: #FFFFFF;
+}
+div#campoRecibido{
+    margin: 10px 0;
+}
+
+input#recibido {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #E4E7EC;
+    border-radius: 5px;
+    background: #F9FAFB;
+    color: #333;
+    outline: none;
+    transition: border 0.3s, background 0.3s;
+}
+
+input#recibido:focus {
+    border-color: #2F80ED;
+    background: #FFFFFF;
+}
+
+input#descuento{
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #E4E7EC;
+    border-radius: 5px;
+    background: #F9FAFB;
+    color: #333;
+    outline: none;
+    transition: border 0.3s, background 0.3s;
+}
+
+input#descuento:focus {
+    border-color: #2F80ED;
+    background: #FFFFFF;
+}
+
+#campoCambio {
+    font-size: 16px;
+    font-weight: bold;
+    color: #2F80ED;
+    background: #F3F4F6;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+    margin: 10px 0;
+    
+}
+
+#campoCambio p{
+    margin: 3px;
+}
+
+#finalizarCompra {
+    width: 100%;
+    /* max-width: 300px; */
+    padding: 12px;
+    font-family: "Nunito Sans", serif;
+    font-size: 16px;
+    font-weight: bold;
+    background: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    margin: 0;
+}
+
+#finalizarCompra:hover {
+    background: #1E6FD9;
+    transform: scale(1.05);
+}
+
+#sugerencias {
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    max-height: 250px;
+    overflow-y: auto;
+    z-index: 9999;
+    width: 100%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sugerencia {
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px; /* Más grande para móviles */
+}
+
+.sugerencia:hover {
+    background: #f0f0f0;
+}
+
+div#resumenDescuento{
+    color: #333;
+    font-weight: bold;
+}
+
+    p#total_precio{
+        display: none;
+    }
+@media (min-width: 700px) {
+    section#datos{
+        justify-content: space-between;
+    }
+    div#select_prod{
+        display: flex;
+        justify-content: space-around;
+        margin: 15px 0 10px 0;
+    }
+    div#buscador{
+        margin: 0;
+        width: 45%;
+    }
+    div#buscador input#buscarProducto{
+        font-size: 18px;
+    }
+    #cantidadProducto{
+        font-size: 18px;
+    }
+    table#resumenTabla th,
+    table#resumenTabla td{
+        font-size: 18px;
+
+    }
+    td#acciones{
+        justify-content: space-around;
+    }
+    .total{
+        margin: 25px 0;
+        font-size: 18px;
+    }
+    .total > span{
+        font-size: 20px;
+    }
+    label{
+        font-size: 18px;
+    }
+    select#metodo_pago{
+        font-size: 18px;
+    }
+    input#Recibido{
+        font-size: 18px;
+    }
+    div#campoCambio p{
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 1000px){
+    section#datos{
+        height: auto;
+        padding: 0 20px;
+        display: flex;
+        align-items: flex-end;
+    }
+    div#content_venta{
+        width: 100%;
+    }
+    div#select_prod{
+        margin: 20px 0;
+    }
+    div#buscador{
+        width: 70%;
+    }
+    div#fin_venta{
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+    div#campoRecibido{
+        margin: 0 20px;
+    }
+    div#resumenDescuento{
+        margin: 15px 0;
+    }
+
+        div#resumenDescuento p{
+            margin: 0;
+        }
+    #finalizarCompra{
+        max-width: 500px;
+    }
+
+}
