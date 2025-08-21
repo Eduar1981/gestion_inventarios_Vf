@@ -231,10 +231,64 @@
         <!-- Formulario de nuevo cliente -->
         <div id="formNuevoCliente" style="display: none; margin-top: 15px;">
             <h4>Registrar Nuevo Cliente</h4>
-            <input type="text" id="nuevoDocumento" placeholder="Documento">
+
+            <label for="nuevoTipoPersona">Tipo de Persona</label>
+            <select id="nuevoTipoPersona" required>
+                <option value="">Elige una opción</option>
+                <option value="natural">Natural</option> 
+                <option value="juridica">Jurídica</option>
+            </select>
+
+            <label for="nuevoNombre">Nombre(s)</label>
             <input type="text" id="nuevoNombre" placeholder="Nombre">
+
+            <label for="nuevoApellido">Apellido(s)</label>
             <input type="text" id="nuevoApellido" placeholder="Apellido">
+
+            <label for="nuevoTipoDocumento">Tipo de Documento</label>
+            <select id="nuevoTipoDocumento" required>
+                <option value="">Elige una opción</option>
+                <option value="cedula de ciudadania">Cédula de Ciudadanía</option>
+                <option value="cedula de extranjeria">Cédula de Extranjería</option>
+                <option value="pasaporte">Pasaporte</option>
+                <option value="nit">NIT</option>
+                <option value="estatus de proteccion temporal">Estatus de Protección Temporal</option>
+            </select>
+
+            <label for="nuevoDocumento">Documento Identificaciòn</label>
+            <input type="text" id="nuevoDocumento" placeholder="Documento">
+           
+            <label for="nuevoNombreComercial">Nombre Comercial</label>
+            <input type="text" id="nuevoNombreComercial" placeholder="Nombre Comercial (opcional)">
+
+            <label for="nuevoDepartamento">Departamento</label>
+            <select name="nuevoDepartamento" id="nuevoDepartamento">
+                <option value="">Sellecione un nuevoDepartamento</option>
+            </select>
+
+             <label for="nuevoMunicipio">Municipio</label>
+            <select id="nuevoMunicipio" required>
+            <option value="">Selecciona uno</option>
+            <!-- Aquí se inyectan los municipios desde el JS -->
+            </select>
+
+            <label for="nuevaDireccion">Dirección</label>
+             <input type="text" id="nuevaDireccion" placeholder="Dirección">
+
+            <label for="nuevoTelefono">Teléfono O Celular</label>
+            <input type="text" id="nuevoTelefono" placeholder="Teléfono">
+
+            <label for="nuevoTelefono">Correo Electronico</label>
             <input type="email" id="nuevoCorreo" placeholder="Correo">
+
+            <label for="nuevoTributo">Regimen Tributario</label>
+            <select id="nuevoTributo" required>
+                <option value="">Selecciona uno</option>
+                <option value="21">Régimen Común</option>
+                <option value="22">Régimen Simplificado</option>
+                <option value="49">Gran Contribuyente</option>
+            </select>
+
             <button id="registrarNuevoCliente">Registrar Cliente</button>
         </div>
 
