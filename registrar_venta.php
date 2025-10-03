@@ -346,7 +346,22 @@ try {
 
     // ✅ Confirmamos la venta
     $pdo->commit();
-    echo json_encode(['success' => true, 'cont_venta' => (int)$cont_venta]);
+
+    $factusResult = null;
+    try {
+        $factusResult = factus_emitir_factura($pdo, (int)$cont_venta);
+    } catch (Throwable $factusException) {
+        $factusResult = [
+            'ok'      => false,
+            'message' => $factusException->getMessage(),
+        ];
+    }
+
+    echo json_encode([
+        'success'    => true,
+        'cont_venta' => (int)$cont_venta,
+        'factus'     => $factusResult,
+    ]);
     exit;
 
    
