@@ -54,7 +54,7 @@ $total_mes = $pdo->query($sql_mes)->fetch(PDO::FETCH_ASSOC)['total'] ?? 0;
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
-    <title>Document</title>
+    <title>Home</title>
 </head>
 <body>
 
@@ -158,7 +158,7 @@ $total_mes = $pdo->query($sql_mes)->fetch(PDO::FETCH_ASSOC)['total'] ?? 0;
         <div class="content">
             <div class="card-container">
                 <div class="content-card" id="new_venta">
-                    <div class="card" id="vender" onclick="window.location.href='carrito.html'">
+                    <div class="card" id="vender" onclick="window.location.href='carrito.php'">
                         <h3>🛒 Nueva Venta</h3>
                     </div>
                 </div>

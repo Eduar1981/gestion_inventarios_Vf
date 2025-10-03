@@ -1,3 +1,7 @@
+<?php
+session_start(); // <-- agrega esto al principio de carrito.php
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -79,7 +83,7 @@
         
         <section id="datos">
             <div id="content_venta">
-                <input type="hidden" id="documento_operador" value="<?php echo $_SESSION['documento']; ?>">
+                <!-- <input type="hidden" id="documento_operador" value="<?php echo $_SESSION['documento']; ?>"> -->
                 
 
                 <!-- Campo de búsqueda de productos -->
@@ -144,7 +148,7 @@
                         <option value="efectivo">EFECTIVO</option>
                         <option value="nequi">NEQUI</option>
                         <option value="transferencia">TRANSFERENCIA</option>
-                        <!--<option value="credito">CREDITO</option>-->
+                        <option value="credito">CREDITO</option>
                     </select>
 
                     </div>
@@ -232,18 +236,14 @@
         <div id="formNuevoCliente" style="display: none; margin-top: 15px;">
             <h4>Registrar Nuevo Cliente</h4>
 
-            <label for="nuevoTipoPersona">Tipo de Persona</label>
-            <select id="nuevoTipoPersona" required>
-                <option value="">Elige una opción</option>
-                <option value="natural">Natural</option> 
-                <option value="juridica">Jurídica</option>
-            </select>
-
             <label for="nuevoNombre">Nombre(s)</label>
             <input type="text" id="nuevoNombre" placeholder="Nombre">
 
             <label for="nuevoApellido">Apellido(s)</label>
             <input type="text" id="nuevoApellido" placeholder="Apellido">
+
+            <label for="nuevaFechaNacimiento">Fecha de Nacimiento</label>
+            <input type="date" id="nuevaFechaNacimiento">
 
             <label for="nuevoTipoDocumento">Tipo de Documento</label>
             <select id="nuevoTipoDocumento" required>
@@ -257,6 +257,13 @@
 
             <label for="nuevoDocumento">Documento Identificaciòn</label>
             <input type="text" id="nuevoDocumento" placeholder="Documento">
+
+            <label for="nuevoTipoPersona">Tipo de Persona</label>
+            <select id="nuevoTipoPersona" required>
+                <option value="">Elige una opción</option>
+                <option value="natural">Natural</option> 
+                <option value="juridica">Jurídica</option>
+            </select>
            
             <label for="nuevoNombreComercial">Nombre Comercial</label>
             <input type="text" id="nuevoNombreComercial" placeholder="Nombre Comercial (opcional)">
@@ -273,13 +280,16 @@
             </select>
 
             <label for="nuevaDireccion">Dirección</label>
-             <input type="text" id="nuevaDireccion" placeholder="Dirección">
+            <input type="text" id="nuevaDireccion" placeholder="Dirección">
 
-            <label for="nuevoTelefono">Teléfono O Celular</label>
-            <input type="text" id="nuevoTelefono" placeholder="Teléfono">
+            <label for="nuevoCelular">Celular</label>
+            <input type="tel" id="nuevoCelular" placeholder="Celular">
 
-            <label for="nuevoTelefono">Correo Electronico</label>
-            <input type="email" id="nuevoCorreo" placeholder="Correo">
+            <label for="nuevoTelefono">Teléfono Fijo</label>
+            <input type="tel" id="nuevoTelefono" placeholder="Teléfono Fijo">
+
+            <label for="nuevoCorreo">Correo Electronico</label>
+            <input type="email" id="nuevoCorreo" placeholder="Correo Electronico">
 
             <label for="nuevoTributo">Regimen Tributario</label>
             <select id="nuevoTributo" required>
@@ -292,6 +302,74 @@
             <button id="registrarNuevoCliente">Registrar Cliente</button>
         </div>
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const selDepto = document.getElementById("nuevoDepartamento");
+  const selMuni  = document.getElementById("nuevoMunicipio");
+
+  // 1) Estado inicial
+  resetMunicipios(true); // deshabilitado hasta que se elija depto
+
+  // 2) Cargar JSON con departamentos y municipios
+  //    Ajusta la ruta si tu JSON está en otra carpeta.
+  fetch("departamentos_municipios.json")
+    .then(r => {
+      if (!r.ok) throw new Error("No se pudo cargar departamentos_municipios.json");
+      return r.json();
+    })
+    .then(data => {
+      // data es un objeto: { "Antioquia": ["Medellín", ...], "Caldas": ["Manizales", ...], ... }
+
+      // Llenar departamentos ordenados
+      const departamentos = Object.keys(data).sort((a, b) => a.localeCompare(b, 'es'));
+      // Limpia (pero conserva la primera opción placeholder existente)
+      keepOnlyFirstOption(selDepto);
+      departamentos.forEach(dep => {
+        const opt = document.createElement("option");
+        opt.value = dep;        // valor que enviarás al backend
+        opt.textContent = dep;  // texto visible
+        selDepto.appendChild(opt);
+      });
+
+      // 3) Al cambiar de departamento → llenar municipios
+      selDepto.addEventListener("change", () => {
+        const dep = selDepto.value;
+        const municipios = data[dep] || [];
+        fillMunicipios(municipios);
+      });
+    })
+    .catch(err => {
+      console.error(err);
+      alert("⚠ No se pudo cargar la lista de departamentos/municipios.");
+    });
+
+  // ----- utilidades -----
+  function keepOnlyFirstOption(selectEl) {
+    // deja solo la primera <option> (placeholder)
+    while (selectEl.options.length > 1) {
+      selectEl.remove(1);
+    }
+  }
+
+  function resetMunicipios(disabled = false) {
+    keepOnlyFirstOption(selMuni);
+    selMuni.disabled = !!disabled;
+  }
+
+  function fillMunicipios(lista) {
+    resetMunicipios(false);
+    // ordenar alfabéticamente
+    lista.slice() // copiar por seguridad
+         .sort((a, b) => a.localeCompare(b, 'es'))
+         .forEach(m => {
+            const opt = document.createElement("option");
+            opt.value = m;       // valor que enviarás al backend
+            opt.textContent = m; // texto visible
+            selMuni.appendChild(opt);
+         });
+  }
+});
+</script>
 
     </main>
     <script src="js/reconocer_rol.js"></script>

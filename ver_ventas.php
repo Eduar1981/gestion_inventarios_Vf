@@ -127,7 +127,7 @@ $ventas = $stmt->fetchAll(PDO::FETCH_OBJ);
                 <h4>LISTADO DE VENTAS</h4>
             </div>  
             
-            <a id="add_venta" href="carrito.html">
+            <a id="add_venta" href="carrito.php">
                 <i class='bx bx-plus-circle'></i>
                 <p>Nueva Venta</p>
             </a>
@@ -217,6 +217,17 @@ $ventas = $stmt->fetchAll(PDO::FETCH_OBJ);
                             <label>Vendedor</label>
                             <span id="documento_operador"></span>
                         </div>
+
+                        <div class="info-group">
+                            <label>Documento Cliente</label>
+                            <span id="cliente_documento"></span>
+                        </div>
+
+                        <!-- <div class="info-group">
+                            <label>Cliente</label>
+                            <span id="cliente_nombre"></span>
+                        </div> -->
+
                     </div>
                 </div>
 
